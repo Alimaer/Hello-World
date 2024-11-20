@@ -2,6 +2,8 @@ FROM node:22.11.0 AS node
 
 LABEL title="HELLOWORLD DOCKER EXERCISE"
 
+COPY ./nginx.conf /etc/nginx/conf/default.conf
+
 WORKDIR /app
 
 COPY package.json package.json
