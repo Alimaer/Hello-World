@@ -24,4 +24,4 @@ FROM nginx:alpine
 
 VOLUME /var/cache/nginx
 
-COPY --from=node /app/dist /usr/share/nginx/html
+COPY --from=node /app/dist/browser /usr/share/nginx/html
