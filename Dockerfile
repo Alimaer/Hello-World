@@ -2,8 +2,6 @@ FROM node:22.11.0 AS node
 
 LABEL title="HELLOWORLD DOCKER EXERCISE"
 
-COPY ./nginx.conf /etc/nginx/conf/default.conf
-
 WORKDIR /app
 
 COPY package.json package.json
@@ -23,5 +21,7 @@ RUN npm run build -- --configuration production
 FROM nginx:alpine
 
 VOLUME /var/cache/nginx
+
+COPY ./nginx.conf /etc/nginx/conf/default.conf
 
 COPY --from=node /app/dist /usr/share/nginx/html
