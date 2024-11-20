@@ -24,4 +24,4 @@ VOLUME /var/cache/nginx
 
 COPY ./nginx.conf /etc/nginx/conf/default.conf
 
-COPY --from=node /app/dist/browser /usr/share/nginx/html
+COPY --from=node /app/dist/hello-world/browser /usr/share/nginx/html
